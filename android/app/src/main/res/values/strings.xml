@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">PRO BELIEVERS GYM</string>
+    <string name="title_activity_main">PRO BELIEVERS GYM</string>
+    <string name="package_name">com.probelievers.gym</string>
+    <string name="custom_url_scheme">com.probelievers.gym</string>
+</resources>
