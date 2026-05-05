@@ -30,8 +30,17 @@ jobs:
     - name: 🔨 Build React app
       run: npm run build
 
+    - name: 📁 List files for debugging
+      run: ls -R android
+
     - name: 🔄 Sync Capacitor
-      run: npx cap sync android --verbose
+      run: |
+        npx cap sync android --verbose || (
+          echo "Sync failed, attempting to re-add platform..."
+          rm -rf android
+          npx cap add android
+          npx cap sync android --verbose
+        )
 
     - name: 🔑 Make gradlew executable
       run: chmod +x android/gradlew
